@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&display=swap');
+
+.page {
+    background-color: #070707;
+    color: #B7B7B7;
+    font-family: "Raleway", sans-serif;
+}
+
+.page__section {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-section {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+}
+
+.hero-section__title {
+    color: #CF6679;
+    font-family: 'Space Grotesk';
+    font-size: 4.5rem;
+
+    /*remove bottom space*/
+    margin-bottom: 0;
+}
+
+.hero-section__subtitle {
+    font-weight: lighter;
+    font-size: 1.7rem;
+}
+
+.hero-section__image {
+    max-width: 350px;
+}
+
+.arrow {
+    position: absolute;
+    left: 30%;
+    bottom: 20%;
+    z-index: -1;
+}
+
+.project-section {
+    text-align: center;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.project-card {
+    border-radius: 30px;
+    overflow: hidden;
+    height: 300px;
+    position: relative;
+}
+
+.project-card__title {
+    padding-top: 40;
+    color: #73e8af;
+    font-family: 'Raleway';
+    font-weight: lighter;
+    font-size: 2rem;
+    text-shadow: 1px -1px 10px rgb(0, 0, 0);
+}
+
+.project-card__description {
+    opacity: 0;
+    padding-top: 20;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.project-card__background {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+    object-fit: cover;
+    height: 100%;
+}
+
+.project-card:hover .project-card__description {
+    opacity: 1;
+}
+
+.project-card:hover .project-card__background {
+    opacity: 0.5;
+}
