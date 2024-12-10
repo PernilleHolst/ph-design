@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -16,56 +17,153 @@
             <li id="navbar"><a class="nav-link">Contact</a></li>
         </ul>
     </nav> -->
-    <section class="page__section hero-section">
+
+    <header class="header">
+        <div class="plogo">
+            <img src="img/Plogo.png" alt="plogo" class="plogo__header">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#about">About me</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </header>
+
+    <section class="page__section hero-section" id="home">
         <div>
             <h1 class="hero-section__title">Hi, I am <br>Pernille Holst</h1>
-            <p class="hero-section__subtitle">I work with . . . </p>
+            <!-- <p class="hero-section__subtitle">I work with . . . </p> -->
+            <p class="hero-section__subtitle typewriter-container">I work with <span class="word-thing-container">
+                    <span id="rotate-word">Ai.</span>
+                </span>
+            </p>
+            <script src="script.js"></script>
         </div>
         <div>
             <img class="hero-section__image" src="img/portrait.png" alt="me">
         </div>
         <div class="arrow">
-            <img src="img/arrow.png" alt="" width="500px">
+            <img src="img/arrow.png" alt="" width="500">
         </div>
     </section>
-    <section class="page__section project-section">
-        <h2>My projects</h2>
+    <section class="page__section text-center" id="projects">
+        <h2 class="section-heading">My projects</h2>
 
         <div class="projects-grid">
             <div class="project-card">
                 <div class="project-card__title">Photoshop</div>
-                <div class="project-card__description">I am very with photoshop</div>
-                <img class="project-card__background" src="img/photoshop.png" alt="" width="100%">
+                <div class="project-card__description">I have strong skills in Photoshop, allowing me to create and edit
+                    images with precision and creativity.</div>
+                <img class="project-card__background" src="img/photoshop.jpg" alt="">
             </div>
             <div class="project-card">
                 <div class="project-card__title">Illustrations</div>
-                <div class="project-card__description">I am very with photoshop</div>
-                <img class="project-card__background" src="img/illustration.png" alt="" width="100%">
+                <div class="project-card__description">I create detailed illustrations using Clip Studio Paint. Your
+                    ideas in my hands.</div>
+                <img class="project-card__background" src="img/illustration.png" alt="">
             </div>
             <div class="project-card">
                 <div class="project-card__title">Logo design</div>
-                <div class="project-card__description">I am very with photoshop</div>
-                <img class="project-card__background" src="img/logo.png" alt="" width="100%">
+                <div class="project-card__description">I design logos and figures in Adobe Illustrator.</div>
+                <img class="project-card__background" src="img/logo.png" alt="">
             </div>
             <div class="project-card">
                 <div class="project-card__title">Photography</div>
-                <div class="project-card__description">I am very with photoshop</div>
-                <img class="project-card__background" src="img/promopic.png" alt="" width="100%">
+                <div class="project-card__description">I have a keen eye for photography, capturing stunning images with
+                    a camera.</div>
+                <img class="project-card__background" src="img/promopic.jpg" alt="">
             </div>
             <div class="project-card">
                 <div class="project-card__title">Movingarts</div>
-                <div class="project-card__description">I am very with photoshop</div>
-                <video class="project-card__background" src="video/movingarts.mp4" alt="" width="100%" autoplay loop>
+                <div class="project-card__description">I transform still images into dynamic animations, bringing them
+                    to life with motion graphics through AfterEffects.</div>
+                <video class="project-card__background" src="video/movingarts.mp4" autoplay loop></video>
             </div>
             <div class="project-card">
                 <div class="project-card__title">Promo videos</div>
-                <div class="project-card__description">I am very with photoshop</div>
-                <video class="project-card__background" src="video/promovideo.mp4" alt="" width="100%" autoplay loop>
+                <div class="project-card__description">I created a promotional video using AfterEffects with a template
+                    through Motion Array and adjusted and combined to my liking.</div>
+                <video class="project-card__background" src="video/promovideo.mp4" autoplay loop></video>
             </div>
 
         </div>
+    </section>
+    <section class="page__section text-center" id="about">
+        <h2 class="section-heading">
+            About me
+        </h2>
+        <div class="about-me-content">
 
+            <div class="about-me-content__img">
+                <img src="img/sideportrait.png" alt="sideportrait">
+            </div>
+            <div>
+                <p>
+                    I've loved drawing and creating illustrations for years, using Clip Studio Paint to bring my ideas
+                    to life. Along the way, I've also slowly been getting into in Figma, helping out with a few design
+                    ideas, which sparked my interest for this field.
 
+                    Recently, I decided to apply for a Multimedia Designer role because I want to learn more about
+                    graphic design and improve my skills. This feels like the perfect opportunity to dive deeper into
+                    the creative world.
+
+                    My big dream is to work in UI/UX design, making websites and apps that are not only beautiful but
+                    also easy to use. I'm excited about the idea of combining my artistic side with creating great user
+                    experiences.</p>
+            </div>
+        </div>
+
+    </section>
+    <section class="page__section text-center" id="contact">
+        <div>
+            <h2 class="section-heading">Contact me</h2>
+        </div>
+        <form class="contact-form">
+            <div class="contact-form__info">
+                <div>
+                    <input type="text" placeholder="Name" class="form-field">
+                </div>
+                <div>
+                    <input type="text" placeholder="E-mail" class="form-field">
+                </div>
+
+            </div>
+            <div>
+                <textarea name="description" id="description" class="form-field contact-form__message"
+                    placeholder="Your text here" rows="10"></textarea>
+            </div>
+            <input type="submit" class="contact-form__submit" value="send">
+        </form>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="categories">
+                <a href="#category1">Home</a>
+                <a href="#category2">Projects</a>
+                <a href="#category3">About me</a>
+                <a href="#category4">Contact</a>
+            </div>
+            <div class="social-media">
+                <a href="https://www.instagram.com/design_holst/" target="_blank">
+                    <img src="img/instagram-logo.png" alt="Instagram">
+                </a>
+                <a href="https://www.linkedin.com/in/pernille-holst-a94a80339" target="_blank">
+                    <img src="img/linkedin-logo.png" alt="LinkedIn">
+                </a>
+            </div>
+            <div class="contact-info">
+                <a href="mailto:yourmail@example.com">pernille_holst@outlook.com</a>
+                <br>
+                <p>Telefon: +45 41208285</p>
+            </div>
+        </div>
+        <hr>
+        <div class="footer-bottom">
+            <p>Designed by @design_holst UI/UX designer</p>
+        </div>
+    </footer>
 
 </body>
 

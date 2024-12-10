@@ -1,15 +1,143 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&display=swap');
 
+@media (max-width: 500px) {
+    .header {
+        flex-direction: column;
+        font-size: 10px;
+    }
+
+    .plogo__header {
+        flex-direction: column;
+    }
+
+}
+
+/* Min top bar */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #0707079b;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.064);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-family: 'Raleway';
+    box-sizing: border-box;
+    /* Tilføjet da contact forsvandt ud til højre */
+}
+
+.plogo__header {
+    width: 70px;
+    height: auto;
+    /* Bevarer billedets proportioner */
+    margin: 10px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+}
+
+.nav-links a:hover {
+    color: #82B4FF;
+}
+
+/* I know this isn't BEM, but this made it easier for me to work with my images */
+img,
+video {
+    width: 100%;
+}
+
+/* Til javasscript */
+#rotate-word {
+    font-weight: bold;
+    color: #007BFF;
+    font-family: 'Space Grotesk';
+    display: inline-block;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out, color 0.5s ease-in-out;
+    white-space: nowrap;
+}
+
+.word-thing-container {
+    display: inline-flex;
+    width: 10ch;
+}
+
+.fade-out {
+    opacity: 0;
+}
+
+@keyframes typewriter {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 20ch;
+    }
+
+    /* Matcher den faste bredde */
+}
+
+
+.typewriter {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 0.15em solid orange;
+    /* Cursor effect */
+    animation: typewriter 2s steps(30) 1s 1 normal both, blinkTextCursor 500ms steps(30) infinite normal;
+
+
+}
+
+@keyframes blinkTextCursor {
+    from {
+        border-right-color: orange;
+    }
+
+    to {
+        border-right-color: transparent;
+    }
+}
+
+/* Forside */
 .page {
     background-color: #070707;
     color: #B7B7B7;
     font-family: "Raleway", sans-serif;
 }
 
+
+
 .page__section {
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 175px;
+    margin-bottom: 175px;
 }
 
 .hero-section {
@@ -21,6 +149,7 @@
     padding-bottom: 50px;
 
 }
+
 
 .hero-section__title {
     color: #CF6679;
@@ -36,6 +165,7 @@
     font-size: 1.7rem;
 }
 
+
 .hero-section__image {
     max-width: 350px;
 }
@@ -47,7 +177,35 @@
     z-index: -1;
 }
 
-.project-section {
+@media (max-width: 500px) {
+    .hero-section {
+        flex-direction: column;
+        gap: 50px;
+        ;
+    }
+
+    .hero-section__title {
+        font-size: 2.5rem;
+    }
+
+    .arrow {
+        display: none;
+    }
+
+    .hero-section__subtitle {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .projects-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+}
+
+/* Mine Projekter */
+.text-center {
     text-align: center;
 }
 
@@ -65,7 +223,7 @@
 }
 
 .project-card__title {
-    padding-top: 40;
+    padding-top: 20px;
     color: #73e8af;
     font-family: 'Raleway';
     font-weight: lighter;
@@ -75,7 +233,7 @@
 
 .project-card__description {
     opacity: 0;
-    padding-top: 20;
+    padding-top: 20px;
     transition: opacity 0.5s ease-in-out;
 }
 
@@ -94,5 +252,150 @@
 }
 
 .project-card:hover .project-card__background {
-    opacity: 0.5;
+    opacity: 0.2;
+}
+
+@media (max-width: 500px) {
+    .about-me-content {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* Om mig info */
+.about-me-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+.about-me-content__img {
+    max-width: 350px;
+}
+
+.section-heading {
+    margin-bottom: 90px;
+}
+
+@media (max-width: 500px) {
+    .contact-form__info {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* Kontaktformular */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.contact-form__info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: stretch;
+    /* gap: 40px; */
+}
+
+.form-field {
+    width: calc(100% - 40px);
+    height: 20px;
+    background-color: #8db3f917;
+    border-radius: 8px;
+    border: 0;
+    padding: 15px;
+    color: #8db3f9;
+}
+
+.form-field::placeholder {
+    color: #73e8af;
+    font-family: 'Raleway';
+}
+
+.contact-form__message {
+    height: 400px;
+    font-family: 'Raleway';
+}
+
+.contact-form__submit {
+    width: 100px;
+    margin-left: auto;
+    /* margin-right: auto; */
+    height: 30px;
+    background-color: #8db3f917;
+    border: 0;
+    border-radius: 4px;
+    font-family: 'Raleway';
+    color: #73e8af;
+
+}
+
+.contact-form__submit:hover {
+    background-color: #8db3f9;
+    color: #070707;
+}
+
+/* Bund med evt links til SM */
+footer {
+    background-color: #070707;
+    padding: 20px;
+    text-align: center;
+    font-family: 'Raleway';
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-color: #8db3f90b; */
+
+}
+
+.categories a,
+.social-media a {
+    margin: 10px;
+    text-decoration: none;
+    color: #333;
+}
+
+.social-media img {
+    width: 24px;
+    height: 24px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    /* Afstand mellem mail og telefonnummer */
+    margin: 10px 0;
+    color: #b7b7b792;
+
+}
+
+.contact-info a {
+    color: #8db3f988;
+    /* Farve til mail */
+}
+
+.contact-info p:last-child {
+    color: #8db3f988;
+    /* Farve til telefonnummer */
+}
+
+hr {
+    margin: 20px 0;
+    border: 0;
+    border-top: 1px solid #9f9c9c27;
+}
+
+.footer-bottom {
+    font-size: 14px;
+    color: #b7b7b792;
+}
+
+.footer-bottom p {
+    margin: 0;
+    opacity: 0.7;
 }
