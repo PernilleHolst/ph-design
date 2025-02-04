@@ -21,3 +21,5 @@ function rotateWord() {
 
 rotateWord();
 setInterval(rotateWord, 3000); // Skifter ord hver 3. sekund
+
+alert("YOU'RE ENTERING A DANGEROURS PLACE, TURN AROUND BEFORE YOU'LL REGRET");
